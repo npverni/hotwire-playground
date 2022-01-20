@@ -6,12 +6,19 @@
     <script type="module" defer>
       import Turbo from 'https://cdn.skypack.dev/@hotwired/turbo';
     </script>
+    <style>
+      p, figure {margin: 1em 0; padding: 10px 0px 20px 0px}
+      hr { display: block; margin-top: 40px}
+      pre code {
+        background-color: #eee;
+        border: 1px solid #999;
+        display: block;
+        padding: 20px;
+      }
+    </style>
   </head>
   <body>
-    <nav>
-      <a href="/">Home</a>
-      <a href="/about.html">About</a>
-    </nav>
+    <h4>See code in <code>index.html</code></h4>
     {{ content }}
   </body>
 </html>

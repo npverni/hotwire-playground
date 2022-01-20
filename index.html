@@ -2,4 +2,47 @@
 layout: default
 title: Home
 ---
-<h1>Home</h1>
+<h1>Turbo Examples</h1>
+
+<h3>1) Replace content in a turbo frame</h3>
+<p>By default, any link from within a Turbo Frame will look for a matching frame in the response and load it in the frame. For reference, <a href="/one.html">see</a> what a normal request to the same page looks like.</p>
+<turbo-frame id="one" style="border: 1px solid salmon; padding: 20px;">
+  <a href="one">Click</a>
+</turbo-frame>
+<hr />
+
+<h3>2) Load content in a turbo frame from a link outside the frame</h3>
+<p>When the link to trigger a response is outside the turbo frame, use <code>data-turbo-frame="name-of-frame"</code> to have the response load in a frame</p>
+<a href="two" data-turbo-frame="two">Click</a>
+<turbo-frame id="two" style="border: 1px solid salmon; padding: 20px;">
+  Content will be replaced
+</turbo-frame>
+<hr />
+
+<h3>3) Break out of a turbo frame</h3>
+<p>Use <code>data-turbo-frame="_top"</code> on a link to do a normal page visit instead of loading content in the frame</p>
+<turbo-frame id="three" style="border: 1px solid salmon; padding: 20px;">
+  <a href="three" data-turbo-frame="_top">Break out of frame</a>
+</turbo-frame>
+<hr />
+
+<h3>4) Update the page url</h3>
+<p>Use <code>data-turbo-action="advance"</code> to update the page url with of a link followed in the frame</p>
+<turbo-frame id="four" style="border: 1px solid salmon; padding: 20px;" data-turbo-action="advance">
+  <a href="four">Click</a>
+</turbo-frame>
+<hr />
+
+<h3>5) Eager load a frame from a src url</h3>
+<p>Use <code>src="/five.html"</code> to fetch content for a frame on page load. Notice the frame blinks to show the "Loading..." first. Check the network tab to see the request for five.html. Change the src to a page that doesn't exist to better see the loading state.</p>
+<turbo-frame id="five" style="border: 1px solid salmon; padding: 20px;" src="five">
+  Loading...
+</turbo-frame>
+<hr />
+
+<h3>6) Lazy load a frame from a src url</h3>
+<p>Use <code>src="/six.html"</code> and <code>loading="lazy"</code>to fetch content for a frame only when the frame comes into view. To test: minimize the browser size so this example is off screen. With the network tab open, scroll down and notice that six.html is only loaded when this frame comes into view.</p>
+<turbo-frame id="six" style="border: 1px solid salmon; padding: 20px;" src="six" loading="lazy">
+  Loading...
+</turbo-frame>
+<hr />
