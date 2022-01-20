@@ -7,18 +7,17 @@
       import Turbo from 'https://cdn.skypack.dev/@hotwired/turbo';
     </script>
     <style>
+      body {font-family:Arial, Helvetica, sans-serif}
       p, figure {margin: 1em 0; padding: 10px 0px 20px 0px}
-      hr { display: block; margin-top: 40px}
-      pre code {
-        background-color: #eee;
-        border: 1px solid #999;
-        display: block;
-        padding: 20px;
-      }
+      hr { display: block; margin-top: 50px; margin-bottom: 30px}
+      code { font-weight:bold; background-color: #e2e2e2; padding:4px; color: #7B1FA2 }
+      turbo-frame { border: 1px solid black; background-color: #ffffe0; padding: 20px}
+      a { text-decoration: none; color: #7B1FA2 }
+      h4 { background-color: #e2e2e2; padding: 10px; font-weight: normal}
     </style>
   </head>
   <body>
-    <h4>See code in <code>index.html</code></h4>
+    <h4>Simple Hotwire examples using plain html. See: <a href="https://github.com/npverni/hotwire-playground">github.com/npverni/hotwire-playground</a></h4>
     {{ content }}
   </body>
 </html>
